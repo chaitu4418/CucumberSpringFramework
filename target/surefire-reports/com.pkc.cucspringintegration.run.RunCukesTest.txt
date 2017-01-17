@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.pkc.cucspringintegration.run.RunCukesTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.364 sec
