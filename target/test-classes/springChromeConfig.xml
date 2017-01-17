@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- Register the pint as a component for this application -->
+	<bean id="chrome-driver" class="org.openqa.selenium.chrome.ChromeDriver"
+		destroy-method="quit" lazy-init="true" scope="cucumber-glue" />
+	<bean id="syspropsCR"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass">
+			<value>java.lang.System</value>
+		</property>
+		<property name="targetMethod">
+			<value>setProperty</value>
+		</property>
+		<property name="arguments">
+			<list>
+				<value>webdriver.chrome.driver</value>
+				<value>./Drivers/chromedriver.exe</value>
+			</list>
+		</property>
+	</bean>
+</beans>

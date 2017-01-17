@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<!-- this will enable us to autowire the step defs -->
+	<context:component-scan base-package="com.pkc.cucspringintegration" />
+<!-- 			
+	<import resource="classpath*:/springRestConfig.xml" />
+ -->
+ 	
+	<!-- chrome Profile used for loading Chrome browser -->
+ 	<beans profile="chrome">
+		<import resource="classpath*:/springChromeConfig.xml" />
+	</beans>
+	
+	<!-- firefox Profile used for loading Firefox browser -->
+	<beans profile="firefox">
+		<import resource="classpath*:/springFirefoxConfig.xml" />
+	</beans>
+	
+	<!-- rest Profile used for loading Rest service -->
+	<beans profile="rest">
+		<import resource="classpath*:/springRestConfig.xml" />
+	</beans>
+</beans>
